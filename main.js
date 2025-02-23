@@ -29,24 +29,26 @@ function resetGrid() {
     document.getElementById('sketchContainer').innerHTML = '';
     setTimeout(() => {
         createGrid();
-    }, "1000");
+    }, "500");
 }
 
 function createGrid() {
     console.log('createGrid run');
-    // resetGrid();
-    let input = document.getElementById('gridSelection').value;
-    let number_of_squares = input * input;
-    const sketch_container = document.getElementById('sketchContainer');
-    let square_width = sketch_container.offsetWidth / input;
-    let square_height = sketch_container.offsetHeight / input;
+    if (document.querySelector('.filled') == null) {
+        let input = document.getElementById('gridSelection').value;
+        let number_of_squares = input * input;
+        const sketch_container = document.getElementById('sketchContainer');
+        sketch_container.innerHTML = '';
+        let square_width = sketch_container.offsetWidth / input;
+        let square_height = sketch_container.offsetHeight / input;
 
-    for (let i = 0; i < number_of_squares; i++) {
-        let child_node = document.createElement('div');
-        child_node.classList.add('sketch-square');
-        child_node.style.height = square_height.toString() + 'px';
-        child_node.style.width = square_width.toString() + 'px';
-        sketch_container.appendChild(child_node);
+        for (let i = 0; i < number_of_squares; i++) {
+            let child_node = document.createElement('div');
+            child_node.classList.add('sketch-square');
+            child_node.style.height = square_height.toString() + 'px';
+            child_node.style.width = square_width.toString() + 'px';
+            sketch_container.appendChild(child_node);
+        }
+        enableDrawing();
     }
-    enableDrawing();
 }
