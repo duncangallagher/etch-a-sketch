@@ -3,12 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 
 <body>
+    <div id="mainContainer">
+        <div id="etchBorder">
+            <div id="sketchContainer"></div>
+        </div>
+    </div>
     <div id="controlContainer">
         <select name="gridSelection" id="gridSelection">
             <option value="4">4x4</option>
@@ -17,11 +22,10 @@
             <option value="32">32x32</option>
             <option value="64">64x64</option>
             <option value="128">128x128</option>
-          </select>
-          <button onclick="createGrid()">Create</button>
+        </select>
+        <button onclick="createGrid()">Create</button>
         <button onclick="resetGrid()">Shake</button>
     </div>
-    <div id="sketchContainer"></div>
 </body>
 <script src="main.js"></script>
 

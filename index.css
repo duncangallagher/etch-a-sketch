@@ -1,32 +1,45 @@
-html, body {
-    background-color: #333333;
+#mainContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transform: scale(0.5);
 }
 
 #controlContainer {
-    width: 75vw;
     height: auto;
-    height: 50px;
-    margin-bottom: 50px;
-    background-color: #999999;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1em;
+    margin-top: -200px;
+}
+
+#controlContainer button {
+font-size: 1.25em;
+}
+
+#controlContainer select {
+    font-size: 1.25em;
+    }
+
+#etchBorder {
+    background-color: #a12222;
+    padding: 200px;
+    border-radius: 32px;
+    margin-top: -425px;
+    animation: none;
 }
 
 #sketchContainer {
     width: 960px;
     height: 960px;
-    background-color: #999999;
+    background-color: #b9b9b9;
     display: flex;
     flex-wrap: wrap;
 }
 
 .sketch-square {
-    background-color: #999999;
+    background-color: #b9b9b9;
     border: 1px solid #8f8f8f;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -35,4 +48,16 @@ html, body {
 
 .filled {
     background-color: #333333 !important;
+}
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+   25% { transform: rotate(-15deg); }
+   50% { transform: rotate(15deg); }
+   75% { transform: rotate(-15deg); }
+  100% { transform: rotate(0deg); }
+}
+
+#etchBorder.shake {
+    animation: shake 0.5s infinite;
 }

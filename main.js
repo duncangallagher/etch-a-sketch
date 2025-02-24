@@ -26,10 +26,15 @@ function enableDrawing() {
 }
 
 function resetGrid() {
-    document.getElementById('sketchContainer').innerHTML = '';
+    document.querySelector('#etchBorder').classList.add("shake");
     setTimeout(() => {
-        createGrid();
+        document.getElementById('sketchContainer').innerHTML = '';
     }, "500");
+    setTimeout(() => {
+        document.getElementById('sketchContainer').innerHTML = '';
+        createGrid();
+        document.querySelector('#etchBorder').classList.remove("shake");
+    }, "1000");
 }
 
 function createGrid() {
